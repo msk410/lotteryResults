@@ -22,6 +22,9 @@ export default class SelectedGames extends Component {
         ),
     };
 
+    componentWillUnmount() {
+        AsyncStorage.removeItem('oldState')
+    }
     componentWillMount() {
         this.getSelectedGames().then((data) => {
             if (data !== null) {

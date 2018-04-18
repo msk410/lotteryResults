@@ -57,8 +57,11 @@ export default class WinningNumbers extends Component {
     }
 
     onChange(value, index) {
+
     value = value.length > 1 && value[0] === '0' ? value[1] : value
+    if(!unsavedNums.includes(value)) {
         unsavedNums[index] = value;
+        }
     }
 
     async saveGame(gameName) {

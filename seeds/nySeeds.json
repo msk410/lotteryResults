@@ -76,7 +76,7 @@
   "fl": [
     "Powerball",
     "Mega Millions",
-    "Cash 4 life",
+    "Cash 4 Life",
     "Pick 5 Midday",
     "Pick 5 Evening",
     "Pick 4 Midday",
@@ -85,45 +85,45 @@
     "Pick 3 Evening",
     "Pick 2 Midday",
     "Pick 2 Evening",
-    "lucky money",
+    "Lucky Money",
     "Lotto",
-    "fantasy 5"
+    "Fantasy 5"
   ],
   "ga": [
     "Powerball",
     "Mega Millions",
-    "Cash 4 life",
-    "all or nothing morning",
-    "all or nothing Day",
-    "all or nothing Evening",
-    "all or nothing Night",
-    "georgia five Midday",
-    "georgia five Evening",
+    "Cash 4 Life",
+    "All or Nothing Morning",
+    "All or Nothing Day",
+    "All or Nothing Evening",
+    "All or Nothing Night",
+    "Georgia Five Midday",
+    "Georgia Five Evening",
     "Cash 4 Midday",
     "Cash 4 Evening",
     "Cash 4 Night",
     "Cash 3 Midday",
     "Cash 3 Evening",
     "Cash 3 Night",
-    "jumbo bucks Lotto",
-    "fantasy 5",
-    "5 card Cash"
+    "Jumbo Bucks Lotto",
+    "Fantasy 5",
+    "5 Card Cash"
   ],
   "id": [
     "Powerball",
     "Mega Millions",
     "Lucky for Life",
     "Lotto America",
-    "weekly grand",
+    "Weekly Grand",
     "Pick 3 Day",
     "Pick 3 Night",
-    "idaho Cash"
+    "Idaho Cash"
   ],
   "il": [
     "Powerball",
     "Mega Millions",
-    "lucky Day Lotto Midday",
-    "lucky Day Lotto Evening",
+    "Lucky Day Lotto Midday",
+    "Lucky Day Lotto Evening",
     "Pick 4 Midday",
     "Pick 4 Evening",
     "Pick 3 Midday",
@@ -133,14 +133,14 @@
   "in": [
     "Powerball",
     "Mega Millions",
-    "Cash 4 life",
-    "quick draw Midday",
-    "quick draw Evening",
+    "Cash 4 Life",
+    "Quick Draw Midday",
+    "Quick Draw Evening",
     "Daily 4 Midday",
     "Daily 4 Evening",
     "Daily 3 Midday",
     "Daily 3 Evening",
-    "hoosier Lotto",
+    "Hoosier Lotto",
     "Cash 5"
   ],
   "ia": [
@@ -159,7 +159,7 @@
     "Lucky for Life",
     "Lotto America",
     "2by2",
-    "super kansas Cash",
+    "Super Kansas Cash",
     "Pick 3 Midday",
     "Pick 3 Evening"
   ],
@@ -171,8 +171,8 @@
     "Pick 4 Evening",
     "Pick 3 Midday",
     "Pick 3 Evening",
-    "Cash ball",
-    "5 card Cash"
+    "Cash Ball",
+    "5 Card Cash"
   ],
   "la": [
     "Powerball",
@@ -180,7 +180,7 @@
     "Pick 4",
     "Pick 3",
     "Lotto",
-    "easy 5"
+    "Easy 5"
   ],
   "me": [
     "Powerball",
@@ -188,24 +188,24 @@
     "megabucks plus",
     "Lucky for Life",
     "Lotto America",
-    "gimme 5",
-    "world poker tour",
+    "Gimme 5",
+    "World Poker Tour",
     "Pick 4 Day",
-    "Pick 4 eve",
+    "Pick 4 Eve",
     "Pick 3 Day",
-    "Pick 3 eve"
+    "Pick 3 Eve"
   ],
   "md": [
     "Powerball",
     "Mega Millions",
-    "Cash 4 life",
+    "Cash 4 Life",
     "Pick 4 Midday",
     "Pick 4 Evening",
     "Pick 3 Midday",
     "Pick 3 Evening",
-    "multi match",
-    "bonus match 5",
-    "5 card Cash"
+    "Multi Match",
+    "Bonus Match 5",
+    "5 Card Cash"
   ],
   "ma": [
     "Powerball",
@@ -286,12 +286,12 @@
   "nj": [
     "Powerball",
     "Mega Millions",
-    "Cash 4 life",
-    "Pick 6 xtra",
-    "Gimme 5",
-    "Pick 3 Day",
+    "Cash 4 Life",
+    "Pick 6 Xtra",
+    "Jersey Cash 5 Xtra",
+    "Pick 3 Midday",
     "Pick 3 Evening",
-    "Pick 4 Day",
+    "Pick 4 Midday",
     "Pick 4 Evening"
   ],
   "nm": [
@@ -305,7 +305,7 @@
   "ny": [
     "Powerball",
     "Mega Millions",
-    "Cash 4 life",
+    "Cash 4 Life",
     "NY Lotto",
     "Win 4 Midday",
     "Win 4 Evening",
@@ -366,7 +366,7 @@
   "pa": [
     "Powerball",
     "Mega Millions",
-    "Cash 4 life",
+    "Cash 4 Life",
     "Treasure Hunt",
     "Match 6",
     "Cash 5",
@@ -408,12 +408,12 @@
     "Powerball",
     "Mega Millions",
     "Lotto America",
-    "Cash 4 life",
+    "Cash 4 Life",
     "Tennessee Cash",
-    "Cash 4 morning",
+    "Cash 4 Morning",
     "Cash 4 Mid-day",
     "Cash 4 Evening",
-    "Cash 3 morning",
+    "Cash 3 Morning",
     "Cash 3 Mid-day",
     "Cash 3 Evening"
   ],
@@ -435,7 +435,7 @@
     "All or Nothing Day",
     "All or Nothing Evening",
     "All or Nothing Night",
-    "Cash 5"
+    "Cash Five"
   ],
   "vt": [
     "Powerball",
@@ -451,7 +451,7 @@
   "va": [
     "Powerball",
     "Mega Millions",
-    "Cash 4 life",
+    "Cash 4 Life",
     "Pick 4 Day",
     "Pick 4 Night",
     "Pick 3 Day",
@@ -490,6 +490,6 @@
   "wy": [
     "Powerball",
     "Mega Millions",
-    "Cowboy draw"
+    "Cowboy Draw"
   ]
 }

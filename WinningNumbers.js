@@ -36,148 +36,152 @@ export default class WinningNumbers extends Component {
             selectedGames = await JSON.parse(selectedGames);
             let gameInfo = await AsyncStorage.getItem('gameInfo');
             let oldState = await  AsyncStorage.getItem('oldState');
+            if(value === null) {
+                this.props.navigation.navigate("MyLocation")
+            }
             if (value !== null && value != oldState) {
                 // We have data!!
                 let lottoData = new LottoData();
-                let url = "http://192.168.1.82:8080"
+                let url = "http://192.168.1.70:8080"
                 let gameInfo = [];
                 this.setState({
                 loc: "(" + value + ")"
                 })
-                if (value === "AZ") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'the pick', 'pick 3',
-                    'all or nothing morning', 'fantasy 5', 'all or nothing evening', '5 card cash'], 'az');
-                } else if (value === "AR") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'natural state jackpot', 'cash 3 midday',
-                    'cash 3 evening', 'cash 4 midday', 'cash 4 evening', 'lucky for life'], 'ar');
+                gameInfo = await lottoData.getAllData(url, value.toLowerCase)
+//               if (value === "AZ") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'the pick', 'pick 3',
+//                    'all or nothing morning', 'fantasy 5', 'all or nothing evening', '5 card cash'], 'az');
+//                } else if (value === "AR") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'natural state jackpot', 'cash 3 midday',
+//                    'cash 3 evening', 'cash 4 midday', 'cash 4 evening', 'lucky for life'], 'ar');
 //                } else if (value === "CA") {
 //                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'super lotto plus', 'daily 3 midday',
 //                    'daily 3 evening', 'fantasy 5', 'daily 4'], 'ca');
-                } else if (value === "CO") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'pick 3 midday',
-                    'pick 3 evening', 'lotto', 'cash 5'], 'co');
-                } else if (value === "CT") {
-                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'play 3 day',
-                    'play 3 night', 'play 4 day', 'play 4 night', 'lucky links day', 'lucky links night', 'lotto!', 'cash 5'], 'ct');
-                } else if (value === "DE") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'lotto america',
-                    'play 3 day', 'play 3 night', 'play 4 day', 'play 4 night', 'multi win'], 'de');
-                } else if (value === "DC") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'dc-5 midday',
-                        'dc-5 evening', 'dc-4 midday', 'dc-4 evening', 'dc-3 midday', 'dc-3 evening'], 'dc');
+//                } else if (value === "CO") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'pick 3 midday',
+//                    'pick 3 evening', 'lotto', 'cash 5'], 'co');
+//                } else if (value === "CT") {
+//                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'play 3 day',
+//                    'play 3 night', 'play 4 day', 'play 4 night', 'lucky links day', 'lucky links night', 'lotto!', 'cash 5'], 'ct');
+//                } else if (value === "DE") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'lotto america',
+//                    'play 3 day', 'play 3 night', 'play 4 day', 'play 4 night', 'multi win'], 'de');
+//                } else if (value === "DC") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'dc-5 midday',
+//                        'dc-5 evening', 'dc-4 midday', 'dc-4 evening', 'dc-3 midday', 'dc-3 evening'], 'dc');
 //                } else if (value === "FL") {
 //                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'cash 4 life', 'pick 5 midday',
 //                        'pick 5 evening', 'pick 4 midday', 'pick 4 evening', 'pick 3 midday', 'pick 3 evening', 'pick 2 midday',
-//                        'pick 2 evening', 'lucky money', 'lotto', 'fantasy 5'], 'fl');
+//                        'pick 2 evening', 'lucky money', 'florida lotto', 'fantasy 5'], 'fl');
 //                } else if (value === "GA") {
 //                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'cash 4 life', 'all or nothing morning', 'all or nothing day',
 //                        'all or nothing evening', 'all or nothing night', 'georgia five midday', 'georgia five evening', 'cash 4 midday', 'cash 4 evening','cash 4 night', 'cash 3 midday',
 //                        'cash 3 evening', 'cash 3 night', 'jumbo bucks lotto', 'fantasy 5', '5 card cash'], 'ga');
-                } else if (value === "ID") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'lotto america', 'weekly grand', 'pick 3 day',
-                    'pick 3 night', 'idaho cash'], 'id');
-                } else if (value === "IL") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky day lotto midday', 'lucky day lotto evening', 'pick 4 midday',
-                    'pick 4 evening','pick 3 midday', 'pick 3 evening',  'lotto'], 'il');
-                } else if (value === "IN") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'cash 4 life', 'quick draw midday', 'quick draw evening',
-                     'daily 4 midday', 'daily 4 evening', 'daily 3 midday', 'daily 3 evening', 'hoosier lotto', 'cash 5'], 'in');
-                } else if (value === "IA") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'lotto america', 'pick 4 midday',
-                     'pick 4 evening', 'pick 3 midday', 'pick 3 evening'], 'ia');
-                } else if (value === "KS") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'lotto america', '2by2',
-                     'super kansas cash', 'pick 3 midday', 'pick 3 evening'], 'ks');
-                } else if (value === "KY") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'pick 4 midday', 'pick 4 evening',
-                     'pick 3 midday', 'pick 3 evening', 'cash ball', '5 card cash'], 'ky');
-                } else if (value === "LA") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions','pick 4', 'pick 3', 'lotto', 'easy 5'], 'la');
-                } else if (value === "ME") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions','megabucks plus', 'lucky for life', 'lotto america',
-                    'gimme 5', 'world poker tour', 'pick 4 day', 'pick 4 eve', 'pick 3 day', 'pick 3 eve'], 'me');
-                } else if (value === "MD") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions','cash 4 life', 'pick 4 midday', 'pick 4 evening',
-                     'pick 3 midday', 'pick 3 evening', 'multi match', 'bonus match 5', '5 card cash'], 'md');
-                } else if (value === "MA") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions','lucky for life', 'numbers game midday', 'numbers game evening',
-                     'megabucks doubler', 'mass cash'], 'ma');
-                } else if (value === "MI") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions','lucky for life', 'daily 4 midday', 'daily 4 evening',
-                     'daily 3 midday', 'daily 3 evening','keno!', 'fantasy 5', 'classic lotto 47'], 'mi');
-                } else if (value === "MN") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions','lucky for life','lotto america','north star cash',
-                    'gopher 5', 'daily 3'], 'mn');
-                } else if (value === "MS") {
-                    gameInfo = await lottoData.getAllData(url, ['mega millions','pick 3 midday', 'pick 3 evening', 'pick 4 midday' , 'pick 4 evening'], 'ms');
-                } else if (value === "MO") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'show me cash', 'lotto', 'pick 3 midday',
-                     'pick 3 evening', 'pick 4 midday' , 'pick 4 evening'], 'mo');
-                } else if (value === "MT") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'lotto america', 'montana cash','big sky bonus'], 'mt');
-                } else if (value === "NE") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', '2by2', 'pick 5','pick 3', 'my day'], 'ne');
-                } else if (value === "NH") {
-                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'megabucks', 'lucky for life', 'gimme 5',
-                    'pick 3 day', 'pick 3 evening', 'pick 4 day', 'pick 4 evening'], 'nh');
+//                } else if (value === "ID") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'lotto america', 'weekly grand', 'pick 3 day',
+//                    'pick 3 night', 'idaho cash'], 'id');
+//                } else if (value === "IL") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky day lotto midday', 'lucky day lotto evening', 'pick 4 midday',
+//                    'pick 4 evening','pick 3 midday', 'pick 3 evening',  'lotto'], 'il');
+//                } else if (value === "IN") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'cash 4 life', 'quick draw midday', 'quick draw evening',
+//                     'daily 4 midday', 'daily 4 evening', 'daily 3 midday', 'daily 3 evening', 'hoosier lotto', 'cash 5'], 'in');
+//                } else if (value === "IA") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'lotto america', 'pick 4 midday',
+//                     'pick 4 evening', 'pick 3 midday', 'pick 3 evening'], 'ia');
+//                } else if (value === "KS") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'lotto america', '2by2',
+//                     'super kansas cash', 'pick 3 midday', 'pick 3 evening'], 'ks');
+//                } else if (value === "KY") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'pick 4 midday', 'pick 4 evening',
+//                     'pick 3 midday', 'pick 3 evening', 'cash ball', '5 card cash'], 'ky');
+//                } else if (value === "LA") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions','pick 4', 'pick 3', 'lotto', 'easy 5'], 'la');
+//                } else if (value === "ME") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions','megabucks plus', 'lucky for life', 'lotto america',
+//                    'gimme 5', 'world poker tour', 'pick 4 day', 'pick 4 eve', 'pick 3 day', 'pick 3 eve'], 'me');
+//                } else if (value === "MD") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions','cash 4 life', 'pick 4 midday', 'pick 4 evening',
+//                     'pick 3 midday', 'pick 3 evening', 'multi match', 'bonus match 5', '5 card cash'], 'md');
+//                } else if (value === "MA") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions','lucky for life', 'numbers game midday', 'numbers game evening',
+//                     'megabucks doubler', 'mass cash'], 'ma');
+//                } else if (value === "MI") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions','lucky for life', 'daily 4 midday', 'daily 4 evening',
+//                     'daily 3 midday', 'daily 3 evening','keno!', 'fantasy 5', 'classic lotto 47'], 'mi');
+//                } else if (value === "MN") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions','lucky for life','lotto america','north star cash',
+//                    'gopher 5', 'daily 3'], 'mn');
+//                } else if (value === "MS") {
+//                    gameInfo = await lottoData.getAllData(url, ['mega millions','pick 3 midday', 'pick 3 evening', 'pick 4 midday' , 'pick 4 evening'], 'ms');
+//                } else if (value === "MO") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'show me cash', 'lotto', 'pick 3 midday',
+//                     'pick 3 evening', 'pick 4 midday' , 'pick 4 evening'], 'mo');
+//                } else if (value === "MT") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'lotto america', 'montana cash','big sky bonus'], 'mt');
+//                } else if (value === "NE") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', '2by2', 'pick 5','pick 3', 'my day'], 'ne');
+//                } else if (value === "NH") {
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'megabucks', 'lucky for life', 'gimme 5',
+//                    'pick 3 day', 'pick 3 evening', 'pick 4 day', 'pick 4 evening'], 'nh');
 //                } else if (value === "NJ") {
-//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'cash 4 life', 'pick 6 xtra', 'gimme 5',
-//                    'pick 3 day', 'pick 3 evening', 'pick 4 day', 'pick 4 evening'], 'nj');
+//                    gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'cash 4 life', 'pick 6 xtra', 'jersey cash 5 xtra',
+//                    'pick 3 midday', 'pick 3 evening', 'pick 4 midday', 'pick 4 evening'], 'nj');
 //                } else if (value === "NM") {
 //                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lotto america', 'roadrunner cash', 'pick 3 midday',
 //                        'pick 3 evening'], 'nm');
-                } else if (value === "NY") {
-                      gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'cash 4 life', 'ny lotto', 'win 4 midday', 'win 4 evening',
-                      'take 5', 'pick 10', 'numbers midday', 'numbers evening'], 'ny');
-               } else if (value === "NC") {
-                      gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'pick 4 daytime', 'pick 4 evening',
-                      'pick 3 daytime', 'pick 3 evening','cash 5'], 'nc');
-               } else if (value === "ND") {
-                      gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'lotto america', '2by2'], 'nd');
+//                } else if (value === "NY") {
+//                      gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'cash 4 life', 'new york lotto', 'win 4 midday', 'win 4 evening',
+//                      'take 5', 'pick 10', 'numbers midday', 'numbers evening'], 'ny');
+//               } else if (value === "NC") {
+//                      gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'pick 4 daytime', 'pick 4 evening',
+//                      'pick 3 daytime', 'pick 3 evening','cash 5'], 'nc');
+//               } else if (value === "ND") {
+//                      gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'lotto america', '2by2'], 'nd');
 //               } else if (value === "OH") {
 //                      gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'pick 5 midday', 'pick 5 evening',
 //                      'rolling cash 5', 'pick 4 midday', 'pick 4 evening', 'pick 3 midday', 'pick 3 evening', 'classic lotto'], 'oh');
-               } else if (value === "OK") {
-                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lotto america', 'poker pick', 'pick 3',
-                     'cash 5'], 'ok');
-               } else if (value === "OR") {
-                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'win for life', 'pick 4 1pm', 'pick 4 4pm',
-                     'pick 4 7pm', 'pick 4 10pm', 'megabucks', 'lucky lines'], 'or');
-               } else if (value === "PA") {
-                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'cash 4 life', 'treasure hunt', 'match 6', 'cash 5',
-                     'pick 5 midday', 'pick 5 evening', 'pick 4 midday', 'pick 4 evening', 'pick 3 midday', 'pick 3 evening',
-                      'pick 2 midday', 'pick 2 evening'], 'pa');
-               } else if (value === "RI") {
-                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'wild money',
-                     'the numbers midday', 'the numbers evening'], 'ri');
-               } else if (value === "SC") {
-                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'pick 4 midday', 'pick 4 evening',
-                     'pick 3 midday', 'pick 3 evening', 'palmetto cash 5'], 'sc');
-               } else if (value === "SD") {
-                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'lotto america', 'dakota cash'], 'sd');
-               } else if (value === "TN") {
-                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lotto america', 'cash 4 life', 'tennessee cash',
-                     'cash 4 morning', 'cash 4 mid-day', 'cash 4 evening', 'cash 3 morning', 'cash 3 mid-day', 'cash 3 evening'], 'tn');
-               } else if (value === "TX") {
-                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'texas two step', 'texas triple chance','lotto texas',
-                      'daily 4 morning', 'daily 4 day', 'daily 4 evening', 'daily 4 night','pick 3 morning', 'pick 3 day', 'pick 3 evening', 'pick 3 night',
-                     'all or nothing morning', 'all or nothing day', 'all or nothing evening', 'all or nothing night', 'cash 5'], 'tx');
-               } else if (value === "VT") {
-                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'megabucks', 'lucky for life', 'gimme 5',
-                     'pick 4 day', 'pick 4 evening', 'pick 3 day', 'pick 3 evening'], 'vt');
-               } else if (value === "VA") {
-                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'cash 4 life', 'pick 4 day', 'pick 4 night',
-                     'pick 3 day', 'pick 3 night', 'cash 5 day', 'cash 5 night', 'bank a million'], 'va');
-               } else if (value === "WA") {
-                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'match 4', 'lotto', 'daily keno', 'hit 5', 'the daily game'], 'wa');
+//               } else if (value === "OK") {
+//                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lotto america', 'poker pick', 'pick 3',
+//                     'cash 5'], 'ok');
+//               } else if (value === "OR") {
+//                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'win for life', 'pick 4 1pm', 'pick 4 4pm',
+//                     'pick 4 7pm', 'pick 4 10pm', 'megabucks', 'lucky lines'], 'or');
+//               } else if (value === "PA") {
+//                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'cash 4 life', 'treasure hunt', 'match 6', 'cash 5',
+//                     'pick 5 midday', 'pick 5 evening', 'pick 4 midday', 'pick 4 evening', 'pick 3 midday', 'pick 3 evening',
+//                      'pick 2 midday', 'pick 2 evening'], 'pa');
+//               } else if (value === "RI") {
+//                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'wild money',
+//                     'the numbers midday', 'the numbers evening'], 'ri');
+//               } else if (value === "SC") {
+//                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'pick 4 midday', 'pick 4 evening',
+//                     'pick 3 midday', 'pick 3 evening', 'palmetto cash 5'], 'sc');
+//               } else if (value === "SD") {
+//                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lucky for life', 'lotto america', 'dakota cash'], 'sd');
+//               } else if (value === "TN") {
+//                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lotto america', 'cash 4 life', 'tennessee cash',
+//                     'cash 4 morning', 'cash 4 mid-day', 'cash 4 evening', 'cash 3 morning', 'cash 3 mid-day', 'cash 3 evening'], 'tn');
+//               } else if (value === "TX") {
+//                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'texas two step', 'texas triple chance','lotto texas',
+//                      'daily 4 morning', 'daily 4 day', 'daily 4 evening', 'daily 4 night','pick 3 morning', 'pick 3 day', 'pick 3 evening', 'pick 3 night',
+//                     'all or nothing morning', 'all or nothing day', 'all or nothing evening', 'all or nothing night', 'cash five'], 'tx');
+//               } else if (value === "VT") {
+//                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'megabucks', 'lucky for life', 'gimme 5',
+//                     'pick 4 day', 'pick 4 evening', 'pick 3 day', 'pick 3 evening'], 'vt');
+//               } else if (value === "VA") {
+//                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'cash 4 life', 'pick 4 day', 'pick 4 night',
+//                     'pick 3 day', 'pick 3 night', 'cash 5 day', 'cash 5 night', 'bank a million'], 'va');
+//               } else if (value === "WA") {
+//                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'match 4', 'lotto', 'daily keno', 'hit 5', 'the daily game'], 'wa');
 //               } else if (value === "WV") {
 //                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'lotto america', 'daily 4', 'daily 3', 'cash 25'], 'wv');
-               } else if (value === "WI") {
-                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'megabucks', 'super cash', 'pick 4', 'pick 3',
-                     'badger 5', '5 card cash'], 'wi');
-               } else if (value === "WY") {
-                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'cowboy draw'], 'wy');
-               }
+//               } else if (value === "WI") {
+//                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'megabucks', 'super cash', 'pick 4', 'pick 3',
+//                     'badger 5', '5 card cash'], 'wi');
+//               } else if (value === "WY") {
+//                     gameInfo = await lottoData.getAllData(url, ['powerball', 'mega millions', 'cowboy draw'], 'wy');
+//               }
 
                for(let i = 0; i < selectedGames.length; i++) {
                     let select = Object.keys(selectedGames[i])[0];
