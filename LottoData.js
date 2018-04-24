@@ -10,12 +10,13 @@ export default class ArkansasScraper {
                  });
 
             let data = await rawData.json();
-            if(data !== 'undefined' || data.length !== 0)
-                game = data;
+            if(data !== 'undefined' || data.length !== 0) {
+                games = data;
+                }
 
 
         } catch (err) {
-            return games;
+            return [];
         }
         return games;
     }
