@@ -4,10 +4,7 @@
     "Mega Millions",
     "The Pick",
     "Pick 3",
-    "All or Nothing Morning",
     "Fantasy 5",
-    "All or Nothing Evening",
-    "5 Card Cash"
   ],
   "ar": [
     "Powerball",
@@ -141,7 +138,8 @@
     "Daily 3 Midday",
     "Daily 3 Evening",
     "Hoosier Lotto",
-    "Cash 5"
+    "Cash 5",
+    "Lucky Seven"
   ],
   "ia": [
     "Powerball",
@@ -233,7 +231,7 @@
     "Mega Millions",
     "Lucky for Life",
     "Lotto America",
-    "North Star Cash",
+    "Northstar Cash",
     "Gopher 5",
     "Daily 3"
   ],
@@ -292,7 +290,8 @@
     "Pick 3 Midday",
     "Pick 3 Evening",
     "Pick 4 Midday",
-    "Pick 4 Evening"
+    "Pick 4 Evening",
+    "5 Card Cash"
   ],
   "nm": [
     "Powerball",
@@ -348,7 +347,6 @@
     "Powerball",
     "Mega Millions",
     "Lotto America",
-    "Poker Pick",
     "Pick 3",
     "Cash 5"
   ],

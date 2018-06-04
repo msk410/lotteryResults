@@ -378,7 +378,7 @@ export default class MyLocation extends Component {
                 />
                 <AdMobBanner
                   adSize="banner"
-                  adUnitID="ca-app-pub-3940256099942544/6300978111"
+                  adUnitID="ca-app-pub-3658623932091201/8484686802"
                   testDevices={[AdMobBanner.simulatorId]}
                   onAdFailedToLoad={error => console.error(error)}
                 />

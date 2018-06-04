@@ -2,6 +2,10 @@ import React, {Component} from 'react';
 import { AppRegistry, Text, View, StyleSheet, TouchableOpacity, Alert, ScrollView } from 'react-native';
 import { StackNavigator } from 'react-navigation';
 import PastNumbers from "./PastNumbers"
+import {
+  AdMobBanner,
+} from 'react-native-admob'
+
 export default class Results extends Component {
 
 
@@ -14,25 +18,25 @@ export default class Results extends Component {
         let day = d.getDay();
         let dayOfWeek = "";
         switch(day) {
-            case 0:
+            case 1:
                 dayOfWeek = "Mon, ";
                 break;
-            case 1:
+            case 2:
                 dayOfWeek = "Tues, ";
                 break;
-            case 2:
+            case 3:
                 dayOfWeek = "Wed, ";
                 break;
-            case 3:
+            case 4:
                 dayOfWeek = "Thurs, ";
                 break;
-            case 4:
+            case 5:
                 dayOfWeek = "Fri, ";
                 break;
-            case 5:
+            case 6:
                 dayOfWeek = "Sat, ";
                 break;
-            case 6:
+            case 0:
                 dayOfWeek = "Sun, ";
                 break;
             default:
@@ -61,6 +65,12 @@ export default class Results extends Component {
                     <Text >{"\n"}</Text><Text style ={styles.extraStuff}>{this.props.game.extraText}</Text>
                     <Text style = {styles.extraStuff}>{this.props.game.extra[0] === "0" && this.props.game.extra.length > 1 ? this.props.game.extra[1] : this.props.game.extra }</Text>
                 </View>
+                <AdMobBanner
+                                  adSize="banner"
+                                  adUnitID="ca-app-pub-3658623932091201/8484686802"
+                                  testDevices={[AdMobBanner.simulatorId]}
+                                  onAdFailedToLoad={error => console.error(error)}
+                                />
             </View>
         )
     }

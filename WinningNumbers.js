@@ -5,6 +5,9 @@ import Testing from "./Testing"
 import Header from "./Header"
 import {Icon} from 'react-native-elements'
 import LottoData from "./LottoData"
+import {
+  AdMobBanner,
+} from 'react-native-admob'
 
 
 export default class WinningNumbers extends Component {
@@ -37,7 +40,7 @@ export default class WinningNumbers extends Component {
             if (value !== null && value != oldState) {
                 // We have data!!
                 let lottoData = new LottoData();
-                let url = "http://lottoserver-env.us-east-2.elasticbeanstalk.com"
+                let url = "http://192.168.1.70:8080"
                 let gameInfo = [];
                 this.setState({
                 loc: "(" + value + ")"
@@ -253,7 +256,12 @@ export default class WinningNumbers extends Component {
                     </View>
 
                 </Modal>
-
+            <AdMobBanner
+                  adSize="banner"
+                  adUnitID="ca-app-pub-3658623932091201/8484686802"
+                  testDevices={[AdMobBanner.simulatorId]}
+                  onAdFailedToLoad={error => console.error(error)}
+                />
             </View>
         );
     }

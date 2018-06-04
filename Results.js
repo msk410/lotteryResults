@@ -61,6 +61,9 @@ export default class Results extends Component {
                         <Text >{"\n"}</Text><Text style ={styles.extraStuff}>{this.props.game[0].extraText}</Text>
                         <Text style = {styles.extraStuff}>{this.props.game[0].extra[0] === "0" && this.props.game[0].extra.length > 1 ? this.props.game[0].extra[1] : this.props.game[0].extra }</Text>
                     </View>
+                    <View style ={{flexDirection:'row', flexWrap:'wrap'}}>
+                        <Text >{"\n"}</Text><Text style ={styles.extraStuff}>{this.props.game[0].jackpot != null ? this.props.game[0].jackpot : ""}</Text>
+                    </View>
 
                 <TouchableOpacity  onPress={() => this.props.navigate.navigate('PastNumbers', {game : this.props.game, state:this.props.state})}>
                     <Text style = {{color: "#838383"}}>Tap here to see past winning numbers</Text>
